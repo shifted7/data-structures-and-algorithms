@@ -50,7 +50,10 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetizeBetter = (arr) => {
-  // Solution code here...
+  arr.sort((a,b) => {
+      return a.toLowerCase() < b.toLowerCase() ? -1 : 1;
+  })
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,7 +70,10 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
-  // Solution code here...
+  arr.sort((a,b) => {
+      return a.price < b.price ? -1 : 1;
+  })
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -79,7 +85,10 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbersByLength = (arr) => {
-  // Solution code here...
+  arr.sort((a,b) => {
+      return `${a}`.length < `${b}`.length ? -1 : 1;
+  })
+  return arr;
 };
 
 /*-----------------------------------------------------------------------------------------------
@@ -101,7 +110,10 @@ const people = [
 ];
 
 const sortPeople = (arr) => {
-  // Solution code here...
+  arr.sort((a,b) => {
+      return a.lastName < b.lastName ? -1 : 1;
+  })
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
