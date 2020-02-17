@@ -78,9 +78,13 @@ const gruffaloCrumble = {
 
 
 const listFoods = (recipe) => {
-  let result = [];
-  // Solution code here...
-  return result;
+  let results = [];
+  recipe.ingredients.forEach(ingredient => {
+    let ingNoNum = ingredient.slice(ingredient.indexOf(' ')+1);
+    let ingOnly = ingNoNum.slice(ingNoNum.indexOf(' ')+1);
+    results.push(ingOnly);
+  })
+  return results;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -93,7 +97,11 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach(ingredient => {
+      let ingWords = ingredient.split(' ');
+      let ingOnly = ingWords.slice(2);
+      result.push(ingOnly.join(' '));
+  })
   return result;
 };
 
@@ -109,7 +117,10 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.steps.forEach(step => {
+    let stepWords = step.split(' ')
+    result.push(stepWords[0]);
+  })
   return result;
 };
 
