@@ -138,7 +138,13 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  for(let i=0;i<arr.length;i++){
+      if(arr[i]%2===0){
+          arr.splice(i,1);
+          i--;
+      }
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -157,7 +163,16 @@ removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
 const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
+  if (numberOfCharacters<0){
+      return str;
+  } else if(numberOfCharacters>str.length){
+      return '';
+  } else{
+    let arr = str.split('');
+    arr.splice(-numberOfCharacters);
+    str = arr.join('');
+    return str;
+  }
 };
 
 
