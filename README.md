@@ -10,6 +10,6 @@
 - The big O is O(n)
 
 #### Solution
-- https://codefellows.slack.com/files/US18RKRNV/F010783DQTG/img_7831.jpg
+- \challenges\ArrayReverse\assets\array-reverse.jpg
 
 
