@@ -8,7 +8,15 @@ namespace BinarySearch
         {
             int[] sortedArray = { 4, 8, 15, 16, 23, 42 };
             int key = 15;
-            BinarySearch(sortedArray, key);
+            Console.Write("Array values:");
+            foreach(int value in sortedArray)
+            {
+                Console.Write($" {value}");
+            }
+            Console.WriteLine();
+            Console.WriteLine($"Key value: {key}");
+            int resultIndex = BinarySearch(sortedArray, key);
+            Console.WriteLine($"Found at index: {resultIndex}");
         }
         
         /// <summary>
@@ -20,9 +28,10 @@ namespace BinarySearch
         public static int BinarySearch(int[] sortedArray, int key)
         {
             int lowerLimit = 0;
-            int upperLimit = sortedArray.Length;
-            int middleIndex = (upperLimit - lowerLimit) / 2;
-            while (lowerLimit < upperLimit) {
+            int upperLimit = sortedArray.Length - 1;
+            int middleIndex;
+            while (lowerLimit <= upperLimit) {
+                middleIndex = (upperLimit + lowerLimit) / 2;
                 if (sortedArray[middleIndex] < key)
                 {
                     lowerLimit = middleIndex + 1;
@@ -35,7 +44,6 @@ namespace BinarySearch
                 {
                     return middleIndex;
                 }
-                middleIndex = (upperLimit - lowerLimit) / 2;
             }
             return -1;
         }
