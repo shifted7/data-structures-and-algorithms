@@ -5,10 +5,11 @@
 - Class 01 - Array Reverse
 - Class 02 - Array Shift
 - Class 03 - Array Binary Search
+- Class 05 - Linked List
 
 ## 401 Code Challenges - Found in challenges directory
 
-### Code challenge class 01: Array Reverse
+### Code Challenge Class 01: Array Reverse
 - Write a function called reverseArray which takes an array as an argument. Without utilizing any of the built-in methods available to your language, return an array with elements in reversed order.
 
 #### Approach and Efficiency
@@ -19,7 +20,7 @@
 [Array Reverse Solution Whiteboard](https://github.com/shifted7/data-structures-and-algorithms/blob/master/challenges/ArrayReverse/assets/array-reverse.jpg)
 
 
-### Code challenge class 02: Array Shift
+### Code Challenge Class 02: Array Shift
 - Write a function called insertShiftArray which takes in an array and the value to be added. Without utilizing any of the built-in methods available to your language, return an array with the new value added at the middle index.
 
 #### Approach and Efficiency
@@ -29,7 +30,7 @@
 #### Solution
 [Array Shift Solution Whiteboard](https://github.com/shifted7/data-structures-and-algorithms/blob/master/challenges/ArrayShift/assets/array-shift.jpg)
 
-### Code challenge class 03: Array Binary Search
+### Code Challenge Class 03: Array Binary Search
 - Write a function called BinarySearch which takes in 2 parameters: a sorted array and the search key. Without utilizing any of the built-in methods available to your language, return the index of the array’s element that is equal to the search key, or -1 if the element does not exist.
 
 #### Approach and Efficiency
@@ -38,3 +39,12 @@
 
 #### Solution
 [Array Binary Search Solution Whiteboard](https://github.com/shifted7/data-structures-and-algorithms/blob/master/challenges/BinarySearch/assets/array-binary-search.jpg)
+
+### Code Challenge Class 05: Linked List
+- 
+
+#### Approach and Efficiency
+- 
+
+#### Solution
+[Linked List Solution Whiteboard]()
