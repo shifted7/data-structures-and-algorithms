@@ -17,7 +17,7 @@
 - The big O is O(n) time
 
 #### Solution
-[Array Reverse Solution Whiteboard](https://github.com/shifted7/data-structures-and-algorithms/blob/master/challenges/ArrayReverse/assets/array-reverse.jpg)
+![Array Reverse Solution Whiteboard](https://github.com/shifted7/data-structures-and-algorithms/blob/master/challenges/ArrayReverse/assets/array-reverse.jpg)
 
 
 ### Code Challenge Class 02: Array Shift
@@ -28,7 +28,7 @@
 - The big O is O(n) time
 
 #### Solution
-[Array Shift Solution Whiteboard](https://github.com/shifted7/data-structures-and-algorithms/blob/master/challenges/ArrayShift/assets/array-shift.jpg)
+![Array Shift Solution Whiteboard](https://github.com/shifted7/data-structures-and-algorithms/blob/master/challenges/ArrayShift/assets/array-shift.jpg)
 
 ### Code Challenge Class 03: Array Binary Search
 - Write a function called BinarySearch which takes in 2 parameters: a sorted array and the search key. Without utilizing any of the built-in methods available to your language, return the index of the array’s element that is equal to the search key, or -1 if the element does not exist.
@@ -38,7 +38,7 @@
 - The big O is O(log n) time O(1) space
 
 #### Solution
-[Array Binary Search Solution Whiteboard](https://github.com/shifted7/data-structures-and-algorithms/blob/master/challenges/BinarySearch/assets/array-binary-search.jpg)
+![Array Binary Search Solution Whiteboard](https://github.com/shifted7/data-structures-and-algorithms/blob/master/challenges/BinarySearch/assets/array-binary-search.jpg)
 
 ### Code Challenge Class 05: Linked List
 - 
