@@ -41,10 +41,17 @@
 ![Array Binary Search Solution Whiteboard](https://github.com/shifted7/data-structures-and-algorithms/blob/master/challenges/BinarySearch/assets/array-binary-search.jpg)
 
 ### Code Challenge Class 05: Linked List
-- 
+- Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
+- Within your LinkedList class, include a head property. Upon instantiation, an empty Linked List should be created.
+- Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
+- Define a method called includes which takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list.
+- Define a method called toString which takes in no arguments and returns a string representing all the values in the Linked List, formatted as:
+`"{ a } -> { b } -> { c } -> NULL"`
+- Any exceptions or errors that come from your code should be semantic, capturable errors. For example, rather than a default error thrown by your language, your code should raise/throw a custom, semantic error that describes what went wrong in calling the methods you wrote for this lab.
+- Be sure to follow your language/frameworks standard naming conventions (e.g. C# uses PascalCasing for all method and class names).
 
 #### Approach and Efficiency
-- 
+- This code has two classes, Node and LinkList. It gives Node two properties: a value and the next node in the list (which is a reference). The LinkList class has two properties which are used in its methods: Head, which references the first Node in the LinkList, and Current, which references the specific Node on which the LinkList is currently operating. LinkList has three methods which make up the bulk of its functionality. Insert creates a new node and sets that Node as the new head, making sure to first set the new Node's Next property to the old Head so that it is not cleaned up during garbage collection. Includes loops over the list while checking each Node for the given value, using that Node's Next property to iterate along the whole list. ToString also loops over the whole list, using StringBuilder to put the string together, making sure to properly append NULL to the end. All three methods have exception handling. For testing, there is one test for each method, and two for includes (testing the negative case).
 
 #### Solution
-[Linked List Solution Whiteboard]()
+(Whiteboarding not required for this implementation)
