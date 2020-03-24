@@ -6,6 +6,7 @@
 - Class 02 - Array Shift
 - Class 03 - Array Binary Search
 - Class 05 - Linked List
+- Class 06 - Linked List Insertions
 
 ## 401 Code Challenges - Found in challenges directory
 
