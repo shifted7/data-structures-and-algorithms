@@ -120,5 +120,61 @@ namespace LinkedList
             }
             return ""; // Returns empty string if exception thrown
         }
+
+        /// <summary>
+        /// Adds a node with the given value to the end of the linked list
+        /// </summary>
+        /// <param name="value">The value to put at the end of the linked list</param>
+        public void Append(int value)
+        {
+            Current = Head;
+            Node newNode = new Node();
+            newNode.Value = value;
+            if (Head == null) // If the linked list is empty, add the new node as the head
+            {
+                Head = newNode;
+                Current = newNode;
+            }
+            else
+            {
+                while(Current.Next != null) // Loops until the end of the list, and Current is the last node before appending
+                {
+                    Current = Current.Next;
+                }
+                Current.Next = newNode;
+                Current = Head;
+            }
+        }
+
+        public void InsertBefore(int index, int value)
+        {
+            Current = Head;
+            Node newNode = new Node();
+            newNode.Value = value;
+            if (Head == null && index==0)
+            {
+                Head = newNode;
+            }
+            else
+            {
+                Node previousNode = null;
+                int indexSteps = index;
+                while (indexSteps > 0 && Current.Next != null)
+                {
+                    if(indexSteps == 1)
+                    {
+                        previousNode = Current;
+                    }
+                    Current = Current.Next;
+                    indexSteps--;
+                }
+                if(indexSteps == 0)
+                {
+                    newNode.Next = Current;
+                    previousNode.Next = newNode;
+                }
+            }
+            Current = Head;
+        }
     }
 }

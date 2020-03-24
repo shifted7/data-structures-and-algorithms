@@ -55,3 +55,21 @@
 
 #### Solution
 (Whiteboarding not required for this implementation)
+
+### Code Challenge Class 06: Linked List Insertions
+- Write the following methods for the Linked List class:
+  - `.append(value)` which adds a new node with the given value to the end of the list
+  - `.insertBefore(value, newVal)` which add a new node with the given newValue immediately before the first value node
+  - `.insertAfter(value, newVal)` which add a new node with the given newValue immediately after the first value node
+
+#### Approach and Efficiency
+- This code adds three methods: append, insertBefore, and insertAfter to the LinkedList class. 
+  - The Append method loops through the whole list by getting the Next property from each node, starting at the head. Once it reaches the end of the linked list, it sets the last node's Next property as the new node, which has the new value.'
+    - O(n) time and O(1) space
+  - The InsertBefore method is not yet finished. It currently incorrectly takes in an index, rather than a value to find.
+    - O(n) time and O(1) space
+  - The InsertAfter method is not yet finished.
+    - O(n) time and O(1) space
+
+#### Solution
+(Whiteboarding not required for this implementation)

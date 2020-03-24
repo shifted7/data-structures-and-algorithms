@@ -71,5 +71,93 @@ namespace LinkedListTests
             string expectedString = "{12} -> {6789} -> {0} -> {65} -> NULL";
             Assert.Equal(expectedString, newLinkList.ToString());
         }
+
+        [Fact]
+        public void TestAppendAddsNodeToEndOfLinkedList()
+        {
+            //Arrange
+            LinkList newLinkList = new LinkList();
+            newLinkList.Insert(1);
+            newLinkList.Insert(2);
+            newLinkList.Insert(3);
+            newLinkList.Insert(4);
+            int value = 99;
+            Node CurrentNode = newLinkList.Head;
+
+            //Act
+            newLinkList.Append(value);
+            while(CurrentNode.Next != null) // Loop until the end Node of the linked list
+            {
+                CurrentNode = CurrentNode.Next;
+            }
+
+            //Assert
+            Assert.Equal(value, CurrentNode.Value);
+        }
+
+        [Fact]
+        public void TestCanAppendMultipleNodesToEndOfLinkedList()
+        {
+            //Arrange
+            LinkList newLinkList = new LinkList();
+            newLinkList.Insert(12);
+            newLinkList.Insert(13);
+            newLinkList.Insert(14);
+            newLinkList.Insert(15);
+            int[] values = { 82, 83, 84 };
+
+            //Act
+            newLinkList.Append(values[0]);
+            newLinkList.Append(values[1]);
+            newLinkList.Append(values[2]);
+            string resultString = newLinkList.ToString();
+
+            //Assert
+            Assert.Equal("{15} -> {14} -> {13} -> {12} -> {82} -> {83} -> {84} -> NULL", resultString);
+        }
+
+        [Fact]
+        public void TestCanInsertNodeBeforeMiddleNodeOfLinkedList()
+        {
+            //Arrange
+            LinkList newLinkList = new LinkList();
+            newLinkList.Insert(22);
+            newLinkList.Insert(23);
+            newLinkList.Insert(24);
+
+            //Act
+            newLinkList.InsertBefore(1, 901);
+            string resultString = newLinkList.ToString();
+
+            //Assert
+            Assert.Equal("{24} -> {901} -> {23} -> {22} -> NULL", resultString);
+        }
+
+        [Fact]
+        public void TestCanInsertNodeBeforeFirstNodeOfLinkedList()
+        {
+            //Arrange
+            LinkList newLinkList = new LinkList();
+            newLinkList.Insert(34);
+
+            //Act
+            newLinkList.InsertBefore(0, 904);
+            string resultString = newLinkList.ToString();
+
+            //Assert
+            Assert.Equal("{904} -> {34} -> NULL", resultString);
+        }
+
+        [Fact]
+        public void TestCanInsertNodeAfterMiddleNodeOfLinkedList()
+        {
+
+        }
+
+        [Fact]
+        public void TestCanInsertNodeAfterLastNodeOfLinkedList()
+        {
+
+        }
     }
 }
