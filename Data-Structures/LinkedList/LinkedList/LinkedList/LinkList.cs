@@ -145,5 +145,36 @@ namespace LinkedList
                 Current = Head;
             }
         }
+
+        public void InsertBefore(int index, int value)
+        {
+            Current = Head;
+            Node newNode = new Node();
+            newNode.Value = value;
+            if (Head == null && index==0)
+            {
+                Head = newNode;
+            }
+            else
+            {
+                Node previousNode = null;
+                int indexSteps = index;
+                while (indexSteps > 0 && Current.Next != null)
+                {
+                    if(indexSteps == 1)
+                    {
+                        previousNode = Current;
+                    }
+                    Current = Current.Next;
+                    indexSteps--;
+                }
+                if(indexSteps == 0)
+                {
+                    newNode.Next = Current;
+                    previousNode.Next = newNode;
+                }
+            }
+            Current = Head;
+        }
     }
 }
