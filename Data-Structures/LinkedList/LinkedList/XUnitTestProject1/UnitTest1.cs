@@ -71,5 +71,51 @@ namespace LinkedListTests
             string expectedString = "{12} -> {6789} -> {0} -> {65} -> NULL";
             Assert.Equal(expectedString, newLinkList.ToString());
         }
+
+        [Fact]
+        public void TestAppendAddsNodeToEndOfLinkedList()
+        {
+            //Arrange
+            LinkList newLinkList = new LinkList();
+            newLinkList.Insert(1);
+            newLinkList.Insert(2);
+            newLinkList.Insert(3);
+            newLinkList.Insert(4);
+            int value = 99;
+            Node CurrentNode = newLinkList.Head;
+
+            //Act
+            newLinkList.Append(value);
+            while(CurrentNode.Next != null) // Loop until the end Node of the linked list
+            {
+                CurrentNode = CurrentNode.Next;
+            }
+
+            //Assert
+            Assert.Equal(value, CurrentNode.Value);
+        }
+
+        [Fact]
+        public void TestCanAppendMultipleNodesToEndOfLinkedList()
+        {
+            //Arrange
+            LinkList newLinkList = new LinkList();
+            newLinkList.Insert(12);
+            newLinkList.Insert(13);
+            newLinkList.Insert(14);
+            newLinkList.Insert(15);
+            int[] values = { 82, 83, 84 };
+
+            //Act
+            newLinkList.Append(values[0]);
+            newLinkList.Append(values[1]);
+            newLinkList.Append(values[2]);
+
+            //Assert
+            string resultString = newLinkList.ToString();
+            Assert.Equal("{15} -> {14} -> {13} -> {12} -> {82} -> {83} -> {84} -> NULL", resultString);
+
+
+        }
     }
 }
