@@ -65,7 +65,7 @@
 
 #### Approach and Efficiency
 - This code adds three methods: append, insertBefore, and insertAfter to the LinkedList class. 
-  - The Append method loops through the whole list by getting the Next property from each node, starting at the head. Once it reaches the end of the linked list, it sets the last node's Next property as the new node, which has the new value.'
+  - The Append method loops through the whole list by getting the Next property from each node, starting at the head. Once it reaches the end of the linked list, it sets the last node's Next property as the new node, which has the new value.
     - O(n) time and O(1) space
   - The InsertBefore method is not yet finished. It currently incorrectly takes in an index, rather than a value to find.
     - O(n) time and O(1) space
