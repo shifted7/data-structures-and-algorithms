@@ -176,5 +176,36 @@ namespace LinkedList
             }
             Current = Head;
         }
+
+        public int getValueKthFromEnd(int k)
+        {
+            Current = Head;
+            if(Current == null)
+            {
+                throw new Exception("Could not return value from empty linked list");
+            }
+            int lengthCounter = 1;
+            while(Current.Next != null) // Loop through list to get the length
+            {
+                Current = Current.Next;
+                lengthCounter++;
+            }
+            if (k > lengthCounter-1)
+            {
+                throw new Exception("k exceeds range of linked list");
+            }
+            if(k < 0)
+            {
+                throw new Exception("k must be positive");
+            }
+            int nextCounter = lengthCounter - 1 - k; // Set the number of times to jump, starting at beginning of list, which is equivalent to k from the end
+            Current = Head;
+            while (nextCounter > 0)
+            {
+                Current = Current.Next;
+                nextCounter--;
+            }
+            return Current.Value;
+        }
     }
 }

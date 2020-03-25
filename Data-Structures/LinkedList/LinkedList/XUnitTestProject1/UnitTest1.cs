@@ -116,48 +116,111 @@ namespace LinkedListTests
             Assert.Equal("{15} -> {14} -> {13} -> {12} -> {82} -> {83} -> {84} -> NULL", resultString);
         }
 
+        // Lab 6 Tests commented out - will be updated for lab 6 re-submit
+        //[Fact]
+        //public void TestCanInsertNodeBeforeMiddleNodeOfLinkedList()
+        //{
+        //    //Arrange
+        //    LinkList newLinkList = new LinkList();
+        //    newLinkList.Insert(22);
+        //    newLinkList.Insert(23);
+        //    newLinkList.Insert(24);
+
+        //    //Act
+        //    newLinkList.InsertBefore(1, 901);
+        //    string resultString = newLinkList.ToString();
+
+        //    //Assert
+        //    Assert.Equal("{24} -> {901} -> {23} -> {22} -> NULL", resultString);
+        //}
+
+        //[Fact]
+        //public void TestCanInsertNodeBeforeFirstNodeOfLinkedList()
+        //{
+        //    //Arrange
+        //    LinkList newLinkList = new LinkList();
+        //    newLinkList.Insert(34);
+
+        //    //Act
+        //    newLinkList.InsertBefore(0, 904);
+        //    string resultString = newLinkList.ToString();
+
+        //    //Assert
+        //    Assert.Equal("{904} -> {34} -> NULL", resultString);
+        //}
+
+        //[Fact]
+        //public void TestCanInsertNodeAfterMiddleNodeOfLinkedList()
+        //{
+
+        //}
+
+        //[Fact]
+        //public void TestCanInsertNodeAfterLastNodeOfLinkedList()
+        //{
+
+        //}
+
         [Fact]
-        public void TestCanInsertNodeBeforeMiddleNodeOfLinkedList()
+        public void TestCanHandleKthFromEndIfKIsGreaterThanLinkedListLength()
         {
             //Arrange
             LinkList newLinkList = new LinkList();
-            newLinkList.Insert(22);
-            newLinkList.Insert(23);
-            newLinkList.Insert(24);
+            newLinkList.Insert(42);
+            string expectedMessage = "k exceeds range of linked list";
 
             //Act
-            newLinkList.InsertBefore(1, 901);
-            string resultString = newLinkList.ToString();
+            Exception e = Assert.Throws<Exception>(() => newLinkList.getValueKthFromEnd(3));
 
             //Assert
-            Assert.Equal("{24} -> {901} -> {23} -> {22} -> NULL", resultString);
+            Assert.Equal(expectedMessage, e.Message);
         }
 
         [Fact]
-        public void TestCanInsertNodeBeforeFirstNodeOfLinkedList()
+        public void TestCanHandleKthFromEndIfKIsSameAsLinkedListLength()
         {
             //Arrange
             LinkList newLinkList = new LinkList();
-            newLinkList.Insert(34);
-
+            newLinkList.Insert(43);
+            newLinkList.Insert(44);
+            newLinkList.Insert(45);
+            string expectedMessage = "k exceeds range of linked list";
+            
             //Act
-            newLinkList.InsertBefore(0, 904);
-            string resultString = newLinkList.ToString();
+            Exception e = Assert.Throws<Exception>(() => newLinkList.getValueKthFromEnd(3));
 
             //Assert
-            Assert.Equal("{904} -> {34} -> NULL", resultString);
+            Assert.Equal(expectedMessage, e.Message);
         }
 
         [Fact]
-        public void TestCanInsertNodeAfterMiddleNodeOfLinkedList()
+        public void TestCanHandleKthFromEndIfKIsNegative()
         {
+            //Arrange
+            LinkList newLinkList = new LinkList();
+            newLinkList.Insert(48);
+            string expectedMessage = "k must be positive";
 
+
+            //Act
+            Exception e = Assert.Throws<Exception>(() => newLinkList.getValueKthFromEnd(-2));
+
+            //Assert
+            Assert.Equal(expectedMessage, e.Message);
         }
 
         [Fact]
-        public void TestCanInsertNodeAfterLastNodeOfLinkedList()
+        public void TestCanHandleKthFromEndIfLinkListLengthIsOne()
         {
+            //Arrange
+            LinkList newLinkList = new LinkList();
+            newLinkList.Insert(51);
 
+            //Act
+            int result = newLinkList.getValueKthFromEnd(0);
+
+            //Assert
+            Assert.Equal(51, result);
         }
     }
 }

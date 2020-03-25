@@ -74,3 +74,14 @@
 
 #### Solution
 (Whiteboarding not required for this implementation)
+
+### Code Challenge Class 07: Linked List kth From End
+- Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list.
+#### Approach and Efficiency
+- This code adds a method getValueKthFromEnd to the LinkedList class. This method first finds the length of the linked list by traversing it and incrementing a counter on each change to the next node. Then, the method subtracts k from this value, to find the number of "nexts" required to get to the desired node. It then traverses the array, jumping the calculated number of times, and returns the value at the resulting node.
+
+#### Solution
+![Linked List kth From End](https://github.com/shifted7/data-structures-and-algorithms/blob/master/Data-Structures/assets/ll-kth-from-end.jpg)
+
+#### References
+- Reference used for testing an exception: https://stackoverflow.com/questions/45017295/assert-an-exception-using-xunit/45017575
