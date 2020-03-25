@@ -176,7 +176,12 @@ namespace LinkedList
             }
             Current = Head;
         }
-
+        
+        /// <summary>
+        /// Returns the value of the node k nodes ahead of the last node of the linked list
+        /// </summary>
+        /// <param name="k">A positive integer value for the number of nodes from the end of the linked list</param>
+        /// <returns>Integer value at the specified node</returns>
         public int getValueKthFromEnd(int k)
         {
             Current = Head;
