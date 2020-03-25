@@ -73,12 +73,13 @@
     - O(n) time and O(1) space
 
 #### Solution
-(Whiteboarding not required for this implementation)
+(Whiteboard not yet ready for submission)
 
 ### Code Challenge Class 07: Linked List kth From End
 - Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list.
 #### Approach and Efficiency
 - This code adds a method getValueKthFromEnd to the LinkedList class. This method first finds the length of the linked list by traversing it and incrementing a counter on each change to the next node. Then, the method subtracts k from this value, to find the number of "nexts" required to get to the desired node. It then traverses the array, jumping the calculated number of times, and returns the value at the resulting node.
+- The efficiency of this code is O(n) time because we have to traverse the list both to find the length and to get to the correct node. It is O(1) space.
 
 #### Solution
 ![Linked List kth From End](https://github.com/shifted7/data-structures-and-algorithms/blob/master/Data-Structures/assets/ll-kth-from-end.jpg)

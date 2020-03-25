@@ -162,7 +162,7 @@ namespace LinkedListTests
         //}
 
         [Fact]
-        public void TestCanHandleKthFromEndIfKIsGreaterThanLinkedListLength()
+        public void TestKthFromEndCanHandleIfKIsGreaterThanLinkedListLength()
         {
             //Arrange
             LinkList newLinkList = new LinkList();
@@ -177,7 +177,7 @@ namespace LinkedListTests
         }
 
         [Fact]
-        public void TestCanHandleKthFromEndIfKIsSameAsLinkedListLength()
+        public void TestKthFromEndCanHandleIfKIsSameAsLinkedListLength()
         {
             //Arrange
             LinkList newLinkList = new LinkList();
@@ -194,7 +194,7 @@ namespace LinkedListTests
         }
 
         [Fact]
-        public void TestCanHandleKthFromEndIfKIsNegative()
+        public void TestKthFromEndCanHandleKIsNegative()
         {
             //Arrange
             LinkList newLinkList = new LinkList();
@@ -210,7 +210,7 @@ namespace LinkedListTests
         }
 
         [Fact]
-        public void TestCanHandleKthFromEndIfLinkListLengthIsOne()
+        public void TestKthFromEndCanHandleLinkListLengthOfOne()
         {
             //Arrange
             LinkList newLinkList = new LinkList();
@@ -221,6 +221,23 @@ namespace LinkedListTests
 
             //Assert
             Assert.Equal(51, result);
+        }
+        
+        [Fact]
+        public void TestKthFromEndCorrectlyReturnsValue()
+        {
+            //Arrange
+            LinkList newLinkList = new LinkList();
+            newLinkList.Insert(2);
+            newLinkList.Insert(8);
+            newLinkList.Insert(3);
+            newLinkList.Insert(1);
+
+            //Act
+            int result = newLinkList.getValueKthFromEnd(2);
+
+            //Assert
+            Assert.Equal(3, result);
         }
     }
 }
