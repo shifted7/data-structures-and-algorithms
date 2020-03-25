@@ -7,6 +7,7 @@
 - Class 03 - Array Binary Search
 - Class 05 - Linked List
 - Class 06 - Linked List Insertions
+- Class 07 - Linked List Kth From End
 
 ## 401 Code Challenges - Found in challenges directory
 
