@@ -8,6 +8,7 @@
 - Class 05 - Linked List
 - Class 06 - Linked List Insertions
 - Class 07 - Linked List Kth From End
+- Class 08 - Linked List Merge
 
 ## 401 Code Challenges - Found in challenges directory
 
@@ -87,3 +88,14 @@
 
 #### References
 - Reference used for testing an exception: https://stackoverflow.com/questions/45017295/assert-an-exception-using-xunit/45017575
+
+### Code Challenge Class 08: Linked List Merge
+- Write a function called mergeLists which takes two linked lists as arguments. Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the head of the zipped list. Try and keep additional space down to O(1).
+
+#### Approach and Efficiency
+- This code adds a method MergeLists which takes two linked lists. It then sets the current nodes of those lists to the heads to prepare for the merge. It begins a loop which will go until the end of either list is reached, and adds each value of list 2 after each value of list 1, being sure not to lose any nodes to garbage collection. When it is finished, list 2 is no longer needed, and its head is set to the head of list 1, which is now the head of the merged list. That head is returned, and both lists now reference it.
+- This approach is O(n) time and O(1) space.
+
+#### Solution
+![Linked List Merge](https://github.com/shifted7/data-structures-and-algorithms/blob/master/Data-Structures/assets/ll-merge.jpg)
+
