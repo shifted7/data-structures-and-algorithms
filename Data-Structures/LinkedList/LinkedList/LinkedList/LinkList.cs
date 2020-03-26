@@ -7,7 +7,7 @@ namespace LinkedList
     public class LinkList
     {
         public Node Head { get; set; }
-        private Node Current { get; set; }
+        public Node Current { get; set; }
 
         /// <summary>
         /// Inserts a new node with the given value at the beginning of the linked list

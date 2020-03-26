@@ -239,5 +239,45 @@ namespace LinkedListTests
             //Assert
             Assert.Equal(3, result);
         }
+
+        [Fact]
+        public void TestMergeListsCorrectlyMergesTwoLinkedLists()
+        {
+            //Arrange
+            LinkList newLinkList1 = new LinkList();
+            newLinkList1.Insert(2);
+            newLinkList1.Insert(3);
+            newLinkList1.Insert(1);
+            LinkList newLinkList2 = new LinkList();
+            newLinkList2.Insert(4);
+            newLinkList2.Insert(9);
+            newLinkList2.Insert(5);
+            string expectedString = "{1} -> {5} -> {3} -> {9} -> {2} -> {4} -> NULL";
+
+            //Act
+            Program.MergeLists(newLinkList1, newLinkList2);
+
+
+            //Assert
+            Assert.Equal(expectedString, newLinkList1.ToString());
+        }
+
+        [Fact]
+        public void TestMergeListsCorrectlyHandlesEmptyList()
+        {
+            // Arrange
+            LinkList newLinkList1 = new LinkList();
+            newLinkList1.Insert(2);
+            newLinkList1.Insert(3);
+            newLinkList1.Insert(1);
+            LinkList newLinkList2 = new LinkList();
+            string expectedString = "{1} -> {3} -> {2} -> NULL";
+
+            // Act
+            Program.MergeLists(newLinkList1, newLinkList2);
+
+            // Assert
+            Assert.Equal(expectedString, newLinkList1.ToString());
+        }
     }
 }
