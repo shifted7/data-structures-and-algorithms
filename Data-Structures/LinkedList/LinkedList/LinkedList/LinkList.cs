@@ -146,6 +146,39 @@ namespace LinkedList
             }
         }
 
+        public void InsertBefore(int searchValue, int newValue)
+        {
+            Current = Head;
+            if(Head == null) // Case: linked list is empty
+            {
+                throw new Exception("Search value not found in empty linked list.");
+            }
+            if(Current.Value == searchValue) // Case: first value is search value
+            {
+                Node newNode = new Node();
+                newNode.Value = newValue;
+                newNode.Next = Current;
+                Head = newNode;
+                return;
+            }
+            while(Current.Next != null)
+            {
+                if(Current.Next.Value == searchValue)
+                {
+                    Node newNode = new Node();
+                    newNode.Value = newValue;
+                    newNode.Next = Current.Next; // Connect new node to the next node, so we don't lose the rest of the list to GC
+                    Current.Next = newNode; // Connect current node to the new node
+                    break;
+                }
+                Current = Current.Next;
+            }
+            if(Current.Next == null)
+            {
+                throw new Exception("Search value not found.");
+            }
+        }
+
         /// <summary>
         /// Inserts a new value into a linked list in position just after a search value, or throws exception if search value not found.
         /// </summary>
