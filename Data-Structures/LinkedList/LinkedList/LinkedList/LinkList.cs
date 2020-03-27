@@ -146,33 +146,29 @@ namespace LinkedList
             }
         }
 
-        public void InsertBefore(int index, int value)
+        /// <summary>
+        /// Inserts a new value into a linked list in position just after a search value, or throws exception if search value not found.
+        /// </summary>
+        /// <param name="searchValue">The value to look for in the list</param>
+        /// <param name="newValue">The new value to insert into the linked list after the search value</param>
+        public void InsertAfter(int searchValue, int newValue)
         {
             Current = Head;
-            Node newNode = new Node();
-            newNode.Value = value;
-            if (Head == null && index==0)
+            while(Current != null)
             {
-                Head = newNode;
-            }
-            else
+                if (Current.Value == searchValue)
+                {
+                    Node newNode = new Node();
+                    newNode.Value = newValue;
+                    newNode.Next = Current.Next; // Connect new node to the next node, so we don't lose the rest of the list to GC
+                    Current.Next = newNode; // Connect current node to the new node
+                    break;
+                }
+                Current = Current.Next;
+            }    
+            if(Current == null) // throw exception if we reached the end of the list without finding the search value
             {
-                Node previousNode = null;
-                int indexSteps = index;
-                while (indexSteps > 0 && Current.Next != null)
-                {
-                    if(indexSteps == 1)
-                    {
-                        previousNode = Current;
-                    }
-                    Current = Current.Next;
-                    indexSteps--;
-                }
-                if(indexSteps == 0)
-                {
-                    newNode.Next = Current;
-                    previousNode.Next = newNode;
-                }
+                throw new Exception("Search value not found.");
             }
             Current = Head;
         }
