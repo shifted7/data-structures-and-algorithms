@@ -30,6 +30,21 @@ namespace LinkedListTests
         }
 
         [Fact]
+        public void TestHeadPointsToFirstNode()
+        {
+            // Arrange
+            LinkList newLinkList = new LinkList();
+            
+            // Act
+            newLinkList.Insert(6);
+            newLinkList.Insert(4);
+            newLinkList.Insert(2);
+
+            // Assert
+            Assert.Equal(2, newLinkList.Head.Value);
+        }
+
+        [Fact]
         public void TestIncludesCorrectlyReturnsTrueForValueInLinkedList()
         {
             LinkList newLinkList = new LinkList();
