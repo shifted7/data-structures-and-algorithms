@@ -9,6 +9,7 @@
 - Class 06 - Linked List Insertions
 - Class 07 - Linked List Kth From End
 - Class 08 - Linked List Merge
+- Class 10 - Stacks and Queues
 
 ## 401 Code Challenges - Found in challenges directory
 
@@ -42,6 +43,8 @@
 
 #### Solution
 ![Array Binary Search Solution Whiteboard](https://github.com/shifted7/data-structures-and-algorithms/blob/master/challenges/BinarySearch/assets/array-binary-search.jpg)
+
+## 401 Data Structures - Found in Data-Structures directory
 
 ### Code Challenge Class 05: Linked List
 - Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
@@ -98,4 +101,46 @@
 
 #### Solution
 ![Linked List Merge](https://github.com/shifted7/data-structures-and-algorithms/blob/master/Data-Structures/assets/ll-merge.jpg)
+
+### Code Challenge Class 10: Stacks and Queues
+- Create a Node class that has properties for the value stored in the Node, and a pointer to the next node.
+- Create a Stack class that has a top property. It creates an empty Stack when instantiated.
+  - This object should be aware of a default empty value assigned to top when the stack is created.
+  - Define a method called push which takes any value as an argument and adds a new node with that value to the top of the stack with an O(1) Time performance.
+  - Define a method called pop that does not take any argument, removes the node from the top of the stack, and returns the node’s value.
+    - Should raise exception when called on empty stack
+  - Define a method called peek that does not take an argument and returns the value of the node located on top of the stack, without removing it from the stack.
+    - Should raise exception when called on empty stack
+  - Define a method called isEmpty that takes no argument, and returns a boolean indicating whether or not the stack is empty.
+- Create a Queue class that has a front property. It creates an empty Queue when instantiated.
+  - This object should be aware of a default empty value assigned to front when the queue is created.
+  - Define a method called enqueue which takes any value as an argument and adds a new node with that value to the back of the queue with an O(1) Time performance.
+  - Define a method called dequeue that does not take any argument, removes the node from the front of the queue, and returns the node’s value.
+    - Should raise exception when called on empty queue
+  - Define a method called peek that does not take an argument and returns the value of the node located in the front of the queue, without removing it from the queue.
+    - Should raise exception when called on empty queue
+  - Define a method called isEmpty that takes no argument, and returns a boolean indicating whether or not the queue is empty.
+
+#### Approach and Efficiency
+- This code creates a Node class which has public properties of Value and Next, allowing other classes to manipulate these values. The class requires a value in its constructor in order to be instantiated.
+  - Changing either property is just O(1) time and space
+
+- This code creates a Stack class with a public property Top, which is a node. 
+  - The Push method takes in a value, creates a node with that value, sets that node's Next property to the current top node of the Stack, and then resets the Top of the Stack to the new Node.
+  - The Pop method first checks that the Stack is not empty. If it is not, it creates a local Node variable, set to the current Top node. This is the node that will be popped. The Top Node of the Stack is then changed to the next node, and then the popped Node's Next Node is set to null, to remove any connection back to the Stack. The popped Node is then returned.
+  - The Peek method first checks that the Stack is not empty. If it is not, it returns the value of the Top Node.
+  - The IsEmpty method returns whether the Top value of the Stack is equal to null.
+  - All of the above methods take O(1) space and time.
+
+- This code creates a Queue class with a public property Front, a Node, and a public property Rear, also a node.
+  - The Enqueue method takes in a value, creates a new Node with that value, and sets the current Rear node's next property to the new Node. If the Queue is empty, it also sets the Front value to the new Node.
+  - The Dequeue method first checks that the Queue is not empty. If it is not, it creates a local Node variable, set to the current Front node. This is the node that will be dequeued. The Front Node of the Stack is then changed to the next node, and them the dequeued Node's Next Node is set to null, to remove any connection back to the Stack. The dequeued Node is then returned.
+  - The Peek method first checks that the Queue is not empty. If it is not, it returns the value of the Front Node.
+  - The IsEmpty method returns whether the Front value of the Queue is equal to null.
+  - All of the above methods take O(1) space and time.
+
+#### Solution
+![Stack Pop](https://github.com/shifted7/data-structures-and-algorithms/blob/master/Data-Structures/assets/stack-and-queue.jpg)
+
+
 
