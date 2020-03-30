@@ -33,6 +33,7 @@ namespace StacksAndQueues.Classes
             }
             Node poppedNode = Top;
             Top = Top.Next;
+            poppedNode.Next = null;
             return poppedNode;
         }
 
@@ -55,14 +56,7 @@ namespace StacksAndQueues.Classes
         /// <returns>True if empty, else false</returns>
         public bool IsEmpty()
         {
-            if (Top == null)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return Top == null;
         }
     }
 }

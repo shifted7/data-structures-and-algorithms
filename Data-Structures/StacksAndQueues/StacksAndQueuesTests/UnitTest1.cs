@@ -6,11 +6,13 @@ namespace StacksAndQueuesTests
 {
     public class UnitTest1
     {
+        // ------------------------------------ Stack Tests ------------------------------------------
+
         [Fact]
-        public void TestCanCreateStackWithEmptyTop()
+        public void TestCanCreateEmptyStack()
         {
             Stack testStack = new Stack();
-            Assert.True(testStack.Top == null);
+            Assert.Null(testStack.Top);
         }
 
         [Fact]
@@ -71,7 +73,7 @@ namespace StacksAndQueuesTests
             testStack.Push(34);
 
             //Act
-            while(testStack.Top != null)
+            while (testStack.Top != null)
             {
                 testStack.Pop();
             }
@@ -95,7 +97,7 @@ namespace StacksAndQueuesTests
         }
 
         [Fact]
-        public void TestCanPeekTopValue()
+        public void TestCanPeekTopValueOfStack()
         {
             //Arrange
             Stack testStack = new Stack();
@@ -118,6 +120,125 @@ namespace StacksAndQueuesTests
             //Act
             Exception e = Assert.Throws<Exception>(() => testStack.Peek());
             string expectedMessage = "Cannot peek because the stack is empty.";
+
+            //Assert
+            Assert.Equal(expectedMessage, e.Message);
+        }
+
+        // ------------------------------------ Queue Tests ------------------------------------------
+
+        [Fact]
+        public void TestCanCreateEmptyQueue()
+        {
+            Queue testQueue = new Queue();
+            Assert.Null(testQueue.Front);
+        }
+
+        [Fact]
+        public void TestCanEnqueueToBackOfQueue()
+        {
+            //Arrange
+            Queue testQueue = new Queue();
+            int testValue = 40;
+
+            //Act
+            testQueue.Enqueue(testValue);
+
+            //Assert
+            Assert.Equal(testValue, testQueue.Front.Value);
+        }
+
+        [Fact]
+        public void TestCanEnqueueMultipleValuesToRearOfQueue()
+        {
+            //Arrange
+            Queue testQueue = new Queue();
+
+            //Act
+            testQueue.Enqueue(42);
+            testQueue.Enqueue(43);
+            testQueue.Enqueue(44);
+            testQueue.Enqueue(45);
+            int expectedValue = 45;
+
+            //Assert
+            Assert.Equal(expectedValue, testQueue.Front.Next.Next.Next.Value);
+        }
+
+        [Fact]
+        public void TestCanDequeueFromFrontOfQueue()
+        {
+            //Arrange
+            Queue testQueue = new Queue();
+            testQueue.Enqueue(50);
+            testQueue.Enqueue(51);
+
+            //Act
+            Node dequeuedNode = testQueue.Dequeue();
+            int expectedValue = 50;
+
+            //Assert
+            Assert.Equal(expectedValue, dequeuedNode.Value); //Checking the value of the node that was removed.
+        }
+
+        [Fact]
+        public void TestCanDequeueFromFrontOfQueueUntilEmpty()
+        {
+            //Arrange
+            Queue testQueue = new Queue();
+            testQueue.Enqueue(55);
+            testQueue.Enqueue(56);
+            testQueue.Enqueue(57);
+            testQueue.Enqueue(58);
+
+            //Act
+            while (testQueue.Front != null)
+            {
+                testQueue.Dequeue();
+            }
+
+            //Assert
+            Assert.Null(testQueue.Front);
+        }
+
+        [Fact]
+        public void TestDequeueWillThrowExceptionForEmptyQueue()
+        {
+            //Arrange
+            Queue testQueue = new Queue();
+
+            //Act
+            Exception e = Assert.Throws<Exception>(() => testQueue.Dequeue());
+            string expectedMessage = "Cannot dequeue because the queue is empty.";
+
+            //Assert
+            Assert.Equal(expectedMessage, e.Message);
+        }
+
+        [Fact]
+        public void TestCanPeekFrontValueOfQueue()
+        {
+            //Arrange
+            Queue testQueue = new Queue();
+            testQueue.Enqueue(60);
+
+            //Act
+            int result = testQueue.Peek();
+            int expectedValue = 60;
+
+            //Assert
+            Assert.Equal(expectedValue, result);
+        }
+
+        [Fact]
+        public void TestPeekWillThrowExceptionForEmptyQueue()
+        {
+            //Arrange
+            Queue testQueue = new Queue();
+
+            //Act
+            Exception e = Assert.Throws<Exception>(() => testQueue.Peek());
+            string expectedMessage = "Cannot peek because the queue is empty.";
 
             //Assert
             Assert.Equal(expectedMessage, e.Message);
