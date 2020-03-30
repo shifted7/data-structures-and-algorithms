@@ -35,6 +35,24 @@ namespace StacksAndQueues.Classes
             Top = Top.Next;
             return poppedNode;
         }
+
+        /// <summary>
+        /// Returns the top value of the stack, throwing an exception if the stack is empty.
+        /// </summary>
+        /// <returns>The value of the top node of the stack</returns>
+        public int Peek()
+        {
+            if (IsEmpty())
+            {
+                throw new Exception("Cannot peek because the stack is empty.");
+            }
+            return Top.Value;
+        }
+
+        /// <summary>
+        /// Checks whether the stack is empty by checking for a top node
+        /// </summary>
+        /// <returns>True if empty, else false</returns>
         public bool IsEmpty()
         {
             if (Top == null)
