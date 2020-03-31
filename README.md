@@ -56,8 +56,8 @@
 - The Stack instances have only push, pop, and peek methods. You should use your own Stack implementation. Instantiate these Stack objects in your PseudoQueue constructor.
 
 #### Approach and Efficiency
-- This code  
-- The big O is O() time O() space
+- This code uses the stack methods to achieve the queue methods.
+- The big O is O(1) time O(1) space
 
 #### Solution
 ![Queue with Stacks Solution Whiteboard](challenges/QueueWithStacks/assets/queue-with-stacks.jpg)
