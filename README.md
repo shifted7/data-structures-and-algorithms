@@ -2,14 +2,19 @@
 
 ## Table of Contents
 
+### Challenges
 - Class 01 - Array Reverse
 - Class 02 - Array Shift
 - Class 03 - Array Binary Search
+- Class 11 - Queue with Stacks
+
+### Data Structures
 - Class 05 - Linked List
 - Class 06 - Linked List Insertions
 - Class 07 - Linked List Kth From End
 - Class 08 - Linked List Merge
 - Class 10 - Stacks and Queues
+
 
 ## 401 Code Challenges - Found in challenges directory
 
@@ -43,6 +48,20 @@
 
 #### Solution
 ![Array Binary Search Solution Whiteboard](https://github.com/shifted7/data-structures-and-algorithms/blob/master/challenges/BinarySearch/assets/array-binary-search.jpg)
+
+### Code Challenge Class 11: Queue with Stacks
+- Create a brand new PseudoQueue class. Do not use an existing Queue. Instead, this PseudoQueue class will implement our standard queue interface (the two methods listed below), but will internally only utilize 2 Stack objects. Ensure that you create your class with the following methods:
+  - enqueue(value) which inserts value into the PseudoQueue, using a first-in, first-out approach.
+  - dequeue() which extracts a value from the PseudoQueue, using a first-in, first-out approach.
+- The Stack instances have only push, pop, and peek methods. You should use your own Stack implementation. Instantiate these Stack objects in your PseudoQueue constructor.
+
+#### Approach and Efficiency
+- This code  
+- The big O is O() time O() space
+
+#### Solution
+![Queue with Stacks Solution Whiteboard](challenges/QueueWithStacks/assets/queue-with-stacks.jpg)
+
 
 ## 401 Data Structures - Found in Data-Structures directory
 
