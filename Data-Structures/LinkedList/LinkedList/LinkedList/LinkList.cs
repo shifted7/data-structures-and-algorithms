@@ -146,33 +146,62 @@ namespace LinkedList
             }
         }
 
-        public void InsertBefore(int index, int value)
+        public void InsertBefore(int searchValue, int newValue)
         {
             Current = Head;
-            Node newNode = new Node();
-            newNode.Value = value;
-            if (Head == null && index==0)
+            if(Head == null) // Case: linked list is empty
             {
-                Head = newNode;
+                throw new Exception("Search value not found in empty linked list.");
             }
-            else
+            if(Current.Value == searchValue) // Case: first value is search value
             {
-                Node previousNode = null;
-                int indexSteps = index;
-                while (indexSteps > 0 && Current.Next != null)
+                Node newNode = new Node();
+                newNode.Value = newValue;
+                newNode.Next = Current;
+                Head = newNode;
+                return;
+            }
+            while(Current.Next != null)
+            {
+                if(Current.Next.Value == searchValue)
                 {
-                    if(indexSteps == 1)
-                    {
-                        previousNode = Current;
-                    }
-                    Current = Current.Next;
-                    indexSteps--;
+                    Node newNode = new Node();
+                    newNode.Value = newValue;
+                    newNode.Next = Current.Next; // Connect new node to the next node, so we don't lose the rest of the list to GC
+                    Current.Next = newNode; // Connect current node to the new node
+                    break;
                 }
-                if(indexSteps == 0)
+                Current = Current.Next;
+            }
+            if(Current.Next == null)
+            {
+                throw new Exception("Search value not found.");
+            }
+        }
+
+        /// <summary>
+        /// Inserts a new value into a linked list in position just after a search value, or throws exception if search value not found.
+        /// </summary>
+        /// <param name="searchValue">The value to look for in the list</param>
+        /// <param name="newValue">The new value to insert into the linked list after the search value</param>
+        public void InsertAfter(int searchValue, int newValue)
+        {
+            Current = Head;
+            while(Current != null)
+            {
+                if (Current.Value == searchValue)
                 {
-                    newNode.Next = Current;
-                    previousNode.Next = newNode;
+                    Node newNode = new Node();
+                    newNode.Value = newValue;
+                    newNode.Next = Current.Next; // Connect new node to the next node, so we don't lose the rest of the list to GC
+                    Current.Next = newNode; // Connect current node to the new node
+                    break;
                 }
+                Current = Current.Next;
+            }    
+            if(Current == null) // throw exception if we reached the end of the list without finding the search value
+            {
+                throw new Exception("Search value not found.");
             }
             Current = Head;
         }

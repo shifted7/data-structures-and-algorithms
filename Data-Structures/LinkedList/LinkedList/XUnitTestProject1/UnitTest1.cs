@@ -7,7 +7,7 @@ namespace LinkedListTests
     public class UnitTest1
     {
         [Fact]
-        public void TestCanCreateNewNodeWithValue()
+        public void TestCanCreateNewNode()
         {
             Node newNode = new Node();
             Assert.NotNull(newNode);
@@ -131,50 +131,78 @@ namespace LinkedListTests
             Assert.Equal("{15} -> {14} -> {13} -> {12} -> {82} -> {83} -> {84} -> NULL", resultString);
         }
 
-        // Lab 6 Tests commented out - will be updated for lab 6 re-submit
-        //[Fact]
-        //public void TestCanInsertNodeBeforeMiddleNodeOfLinkedList()
-        //{
-        //    //Arrange
-        //    LinkList newLinkList = new LinkList();
-        //    newLinkList.Insert(22);
-        //    newLinkList.Insert(23);
-        //    newLinkList.Insert(24);
+        [Fact]
+        public void TestCanInsertNodeBeforeMiddleNodeOfLinkedList()
+        {
+            // Arrange
+            LinkList newLinkList = new LinkList();
+            newLinkList.Insert(52);
+            newLinkList.Insert(53);
+            newLinkList.Insert(55);
+            newLinkList.Insert(56);
+            string expectedString = "{56} -> {55} -> {54} -> {53} -> {52} -> NULL";
 
-        //    //Act
-        //    newLinkList.InsertBefore(1, 901);
-        //    string resultString = newLinkList.ToString();
+            //Act
+            newLinkList.InsertBefore(53, 54);
+            string resultString = newLinkList.ToString();
 
-        //    //Assert
-        //    Assert.Equal("{24} -> {901} -> {23} -> {22} -> NULL", resultString);
-        //}
+            //Assert
+            Assert.Equal(expectedString, resultString);
+        }
 
-        //[Fact]
-        //public void TestCanInsertNodeBeforeFirstNodeOfLinkedList()
-        //{
-        //    //Arrange
-        //    LinkList newLinkList = new LinkList();
-        //    newLinkList.Insert(34);
+        [Fact]
+        public void TestCanInsertNodeBeforeFirstNodeOfLinkedList()
+        {
+            // Arrange
+            LinkList newLinkList = new LinkList();
+            newLinkList.Insert(62);
+            newLinkList.Insert(63);
+            newLinkList.Insert(64);
+            newLinkList.Insert(65);
+            string expectedString = "{66} -> {65} -> {64} -> {63} -> {62} -> NULL";
 
-        //    //Act
-        //    newLinkList.InsertBefore(0, 904);
-        //    string resultString = newLinkList.ToString();
+            // Act
+            newLinkList.InsertBefore(65, 66);
+            string resultString = newLinkList.ToString();
 
-        //    //Assert
-        //    Assert.Equal("{904} -> {34} -> NULL", resultString);
-        //}
+            // Assert
+            Assert.Equal(expectedString, resultString);
+        }
 
-        //[Fact]
-        //public void TestCanInsertNodeAfterMiddleNodeOfLinkedList()
-        //{
+        [Fact]
+        public void TestCanInsertNodeAfterMiddleNodeOfLinkedList()
+        {
+            //Arrange
+            LinkList newLinkList = new LinkList();
+            newLinkList.Insert(22);
+            newLinkList.Insert(23);
+            newLinkList.Insert(24);
 
-        //}
+            //Act
+            newLinkList.InsertAfter(23, 901);
+            string resultString = newLinkList.ToString();
 
-        //[Fact]
-        //public void TestCanInsertNodeAfterLastNodeOfLinkedList()
-        //{
+            //Assert
+            Assert.Equal("{24} -> {23} -> {901} -> {22} -> NULL", resultString);
+        }
 
-        //}
+        [Fact]
+        public void TestCanInsertNodeAfterLastNodeOfLinkedList()
+        {
+            //Arrange
+            LinkList newLinkList = new LinkList();
+            newLinkList.Insert(34);
+            newLinkList.Insert(35);
+
+            //Act
+            newLinkList.InsertAfter(34, 904);
+            string resultString = newLinkList.ToString();
+
+            //Assert
+            Assert.Equal("{35} -> {34} -> {904} -> NULL", resultString);
+        }
+
+
 
         [Fact]
         public void TestKthFromEndCanHandleIfKIsGreaterThanLinkedListLength()
