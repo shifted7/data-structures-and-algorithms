@@ -7,6 +7,7 @@
 - Class 02 - Array Shift
 - Class 03 - Array Binary Search
 - Class 11 - Queue with Stacks
+- Class 12 - FIFO Animal Shelter
 
 ### Data Structures
 - Class 05 - Linked List
@@ -62,6 +63,22 @@
 #### Solution
 ![Queue with Stacks Solution Whiteboard](challenges/QueueWithStacks/assets/queue-with-stacks.jpg)
 
+### Code Challenge Class 12: FIFO Animal Shelter
+- Create a class called AnimalShelter which holds only dogs and cats. The shelter operates using a first-in, first-out approach.
+  - Implement the following methods:
+    - enqueue(animal): adds animal to the shelter. animal can be either a dog or a cat object.
+    - dequeue(pref): returns either a dog or a cat. If pref is not "dog" or "cat" then return null.
+
+#### Approach and Efficiency
+- This code uses variations of the enqueue and dequeue methods we've used previously for our queue data structure.
+  - The code has an Animal object with a species (cat or dog), and a name (for better testing, to distinguish between multiples of the same species). It has a Next property to link to the next animal in line at the shelter.
+  - For the Enqueue method, we take in an Animal object, check whether the shelter is empty, and if it is, set the Front and Rear properties of the shelter to the new Animal. If not, then we set the next animal of the animal currently last in line to the new animal, and then set the new animal to the new last in line.
+    - The big O of Enqueue is O(1) time O(1) space.
+  - For the Dequeue method, we take a preference of species (cat or dog), and check whether the shelter is empty, throwing an exception if it is. If not, we go through the animals in line, starting at the front, and check whether their species matches the preferred species. If a match is found, we set the match as the chosen animal and check whether the animal is first in line. If it is, we set the next animal as the new animal at the front of the line. If not, we track the previous animal and set that animal to skip the chosen animal in line by setting its next value to the animal after the current. Either way, we reset the chosen animal's next animal to null, to fully remove the connection to the line. We then return the animal. If a match is not found, we continue to iterate through the line until a match is found or we reach the end. If we reach the end with no match to the preference, we return null.
+    - The big O of Dequeue is O(n) time and O(1) space.
+
+#### Solution
+![FIFO Animal Shelter Solution Whiteboard](challenges/AnimalShelter/assets/fifo-animal-shelter.jpg)
 
 ## 401 Data Structures - Found in Data-Structures directory
 
