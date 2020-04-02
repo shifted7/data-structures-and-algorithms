@@ -129,7 +129,7 @@
     - O(n) time and O(1) space
 
 #### Solution
-![challenge-6-resubmit](Data-Structures\assets\challenge-6-resubmit.jpg)
+![challenge-6-resubmit](Data-Structures/assets/challenge-6-resubmit.jpg)
 
 ### Code Challenge Class 07: Linked List kth From End
 - Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list.
