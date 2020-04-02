@@ -8,6 +8,7 @@
 - Class 03 - Array Binary Search
 - Class 11 - Queue with Stacks
 - Class 12 - FIFO Animal Shelter
+- Class 13 - Multi-Bracket Validation
 
 ### Data Structures
 - Class 05 - Linked List
@@ -79,6 +80,20 @@
 
 #### Solution
 ![FIFO Animal Shelter Solution Whiteboard](challenges/AnimalShelter/assets/fifo-animal-shelter.jpg)
+
+### Code Challenge Class 13: Multi-Bracket Validation
+- Your function should take a string as its only argument, and should return a boolean representing whether or not the brackets in the string are balanced. There are 3 types of brackets:
+  - Round Brackets : ()
+  - Square Brackets : []
+  - Curly Brackets : {}
+
+#### Approach and Efficiency
+- This code travereses through the input string, looking for brackets. It utilizes a stack data structure with Nodes to track opening brackets and pops those brackets from the top of the stack only when a corresponding closing bracket is correctly found. The code will return false immediately upon encountering a closing bracket that does not have a corresponding opening bracket. After reaching the end of the string, the code checks whether the stack is empty. If it isn't, that means that there are unclosed brackets, and the method returns false. Otherwise, it returns true, because it has determined that the string is balanced.
+  - The Stack data structure has methods Push() and Pop(), both of which are O(1) space and time.
+  - The main method MultiBracketValidation has a big O of O(n) space and O(n) time.
+
+#### Solution
+![Multi-Bracket Validation Solution Whiteboard](challenges/MultiBracketValidation/assets/multi-bracket-validation.jpg)
 
 ## 401 Data Structures - Found in Data-Structures directory
 
