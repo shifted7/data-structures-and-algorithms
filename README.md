@@ -16,6 +16,7 @@
 - Class 07 - Linked List Kth From End
 - Class 08 - Linked List Merge
 - Class 10 - Stacks and Queues
+- Class 15 - Trees
 
 
 ## 401 Code Challenges - Found in challenges directory
@@ -193,5 +194,31 @@
 #### Solution
 ![Stack Pop](https://github.com/shifted7/data-structures-and-algorithms/blob/master/Data-Structures/assets/stack-and-queue.jpg)
 
+### Code Challenge Class 15: Trees
+- Create a Node class that has properties for the value stored in the node, the left child node, and the right child node.
+- Create a BinaryTree class
+  - Define a method for each of the depth first traversals called preOrder, inOrder, and postOrder which returns an array of the values, ordered appropriately.
+  - Any exceptions or errors that come from your code should be semantic, capturable errors. For example, rather than a default error thrown by your language, your code should raise/throw a custom, semantic error that describes what went wrong in calling the methods you wrote for this lab.
+
+- Create a BinarySearchTree class
+  - Define a method named add that accepts a value, and adds a new node with that value in the correct location in the binary search tree.
+  - Define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
+#### Approach and Efficiency
+- This code creates a Node class which has public properties of Value, Left, and Right. Left and Right are edges that connect to other Nodes one level down in the tree. The class requires a value in its constructor in order to be instantiated.
+  - Changing either property is just O(1) time and space
+
+- This code creates a BinaryTree class with a public property Root, which is a node. 
+  - The PreOrder method takes in a root node, and returns a list of all the nodes in the tree with that root, pre-ordered (Root, Left, Right).
+  - The InOrder method takes in a root node, and returns a list of all the nodes in the tree with that root,  in order (Left, Root, Right).
+  - The PostOrder method takes in a root node, and returns a list of all the nodes in the tree with that root,  post-ordered (Left, Right, Root).
+  - All of the above methods take O(n) space and time.
+
+- This code creates a BinarySearchTree class with a public property Root, a Node.
+  - The Add method takes in a value, creates a new Node with that value, and puts that value in the tree by comparing it to the existing values. Lesser values go left.
+  - The Contains method first checks that the Queue is not empty. It returns false if that's the case. Otherwise, it navigates the tree, going left or right depending on the comparison between the current values. If it runs into a null reference, it returns false. If the value is found, the method returns true.
+  - Both of the above methods take O(n) space and time.
+
+#### Solution
+(whiteboard not yet ready for submission)
 
 
