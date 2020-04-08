@@ -253,4 +253,4 @@
  - This method takes O(n) space and time.
 
 #### Solution
-![Binary Tree Breadth First Traversal]()
+![Binary Tree Breadth First Traversal](Data-Structures/assets/breadth-first.jpg)
