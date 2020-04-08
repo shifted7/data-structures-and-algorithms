@@ -9,6 +9,7 @@
 - Class 11 - Queue with Stacks
 - Class 12 - FIFO Animal Shelter
 - Class 13 - Multi-Bracket Validation
+- Class 16 - FizzBuzzTree
 
 ### Data Structures
 - Class 05 - Linked List
@@ -95,6 +96,25 @@
 
 #### Solution
 ![Multi-Bracket Validation Solution Whiteboard](challenges/MultiBracketValidation/assets/multi-bracket-validation.jpg)
+
+### Code Challenge Class 16: FizzBuzz Tree
+- Write a function called FizzBuzzTree which takes a tree as an argument.
+- Without utilizing any of the built-in methods available to your language, determine whether or not the value of each node is divisible by 3, 5 or both. Create a new tree with the same structure as the original, but the values modified as follows:
+  - If the value is divisible by 3, replace the value with “Fizz”
+  - If the value is divisible by 5, replace the value with “Buzz”
+  - If the value is divisible by 3 and 5, replace the value with “FizzBuzz”
+  - If the value is not divisible by 3 or 5, simply turn the number into a String.
+- Return the new tree.
+
+#### Approach and Efficiency
+- This code travereses through the given tree, checking each value against the fizzbuzz rules. It utilizes the tree data structure with Nodes and sub-trees to perform recursively in a pre-ordered traversal. 
+  - The Node class has properties for Value, which is type Object to allow both string and integer values, and Left and Right which reference the connected sub-nodes.
+  - The Tree class has properties of Root, a Node, and SubTree, a Tree.
+  - The main function FizzBuzzTree takes in a tree, and traverses through in a pre-ordered traversal, first checking the root value and modifying it according to FizzBuzz. It then checks whether there are left and right nodes for the root, and runs itself recursively on new subtrees that have the left and right nodes as their roots. The left trees are first, the right trees after.
+    - The function operates with O(n) time and O(n) space, because it creates a new sub-tree for each node in the tree.
+
+#### Solution
+![FizzBuzzTree Solution Whiteboard](challenges/MultiBracketValidation/assets/fizz-buzz-tree.png)
 
 ## 401 Data Structures - Found in Data-Structures directory
 
