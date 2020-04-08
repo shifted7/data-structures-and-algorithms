@@ -83,5 +83,32 @@ namespace Tree.Classes
             result.Add(root.Value);
             return result;
         }
+
+        public List<int> GetValuesBreadthFirst()
+        {
+            if (Root == null)
+            {
+                throw new Exception("Cannot get values of an empty tree.");
+            }
+            List<int> values = new List<int>();
+            NodeQueue breadthQueue = new NodeQueue();
+            breadthQueue.Enqueue(Root);
+            Node front;
+            while (breadthQueue.Front != null)
+            {
+                front = breadthQueue.Dequeue();
+                values.Add(front.Value);
+                if (front.Left != null)
+                {
+                    breadthQueue.Enqueue(front.Left);
+                }
+                if (front.Left != null)
+                {
+                    breadthQueue.Enqueue(front.Right);
+                }
+            }
+            return values;
+
+        }
     }
 }
