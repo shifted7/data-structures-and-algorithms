@@ -242,4 +242,15 @@
 #### Solution
 (whiteboard not yet ready for submission)
 
+### Code Challenge Class 17: Breadth-First Tree Traversal
+- Write a breadth first traversal method which takes a Binary Tree as its unique input. Without utilizing any of the built-in methods available to your language, traverse the input tree using a Breadth-first approach, and return a list of the values in the tree in the order they were encountered.
 
+#### Approach and Efficiency
+- This code creates a Node class which has public properties of Value, Left, Right, and Next. Left and Right are edges that connect to other Nodes one level down in the tree. Next is used by the NodeQueue class to find the next value in the queue. The class requires a value in its constructor in order to be instantiated.
+  - Changing either property is just O(1) time and space
+
+- This code adds to the BinaryTree class with a method GetValuesBreadthFirst, which returns a list of the values retrieved after a breadth-first traversal. 
+ - This method takes O(n) space and time.
+
+#### Solution
+![Binary Tree Breadth First Traversal]()
