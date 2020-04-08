@@ -253,5 +253,106 @@ namespace TreeTests
 
             Assert.False(testBinarySearchTree.Contains(71));
         }
+
+        [Fact]
+        public void TestCanCreateEmptyNodeQueue()
+        {
+            NodeQueue testNodeQueue = new NodeQueue();
+            Assert.Null(testNodeQueue.Front);
+        }
+
+        [Fact]
+        public void TestGetValuesBreadthFirstCorrectlyReturnsSingleValue()
+        {
+            
+            BinaryTree testBinaryTree = new BinaryTree();
+            int value = 71;
+            Node testNode = new Node(value);
+            testBinaryTree.Root = testNode;
+            List<int> expectedList = new List<int>();
+            expectedList.Add(value);
+
+            List<int> results = testBinaryTree.GetValuesBreadthFirst();
+
+            Assert.Equal(expectedList, results);
+        }
+
+        [Fact]
+        public void TestGetValuesBreadthFirstCorrectlyThrowsExceptionForEmptyTree()
+        {
+            BinaryTree testBinaryTree = new BinaryTree();
+
+            Exception e = Assert.Throws<Exception>(() => testBinaryTree.GetValuesBreadthFirst());
+            string expectedMessage = "Cannot get values of an empty tree.";
+
+            //Assert
+            Assert.Equal(expectedMessage, e.Message);
+        }
+
+        [Fact]
+        public void TestGetValuesBreadthFirstCorrectlyReturnsTwoLevelsOfValues()
+        {
+            BinaryTree testBinaryTree = new BinaryTree();
+            Node testRoot = new Node(0);
+            Node testLeft = new Node(1);
+            Node testRight = new Node(2);
+
+            testBinaryTree.Root = testRoot;
+            testBinaryTree.Root.Left = testLeft;
+            testBinaryTree.Root.Right = testRight;
+
+            List<int> expectedList = new List<int>();
+            expectedList.Add(0);
+            expectedList.Add(1);
+            expectedList.Add(2);
+
+            List<int> results = testBinaryTree.GetValuesBreadthFirst();
+
+            Assert.Equal(expectedList, results);
+        }
+
+        //[Fact]
+        //public void TestGetValuesBreadthFirstCorrectlyReturnsFourLevelsOfValues()
+        //{
+        //    BinaryTree testBinaryTree = new BinaryTree();
+        //    Node testRoot = new Node(0);
+        //    Node testLeft = new Node(1);
+        //    Node testRight = new Node(2);
+        //    Node testLeftLeft = new Node(3);
+        //    Node testLeftRight = new Node(4);
+        //    Node testRightLeft = new Node(5);
+        //    Node testLeftLeftLeft = new Node(6);
+        //    Node testLeftLeftRight = new Node(7);
+        //    Node testLeftRightLeft = new Node(8);
+        //    Node testRightLeftLeft = new Node(9);
+
+        //    testBinaryTree.Root = testRoot;
+        //    testBinaryTree.Root.Left = testLeft;
+        //    testBinaryTree.Root.Right = testRight;
+        //    testBinaryTree.Root.Left.Left = testLeftLeft;
+        //    testBinaryTree.Root.Left.Right = testLeftRight;
+        //    testBinaryTree.Root.Right.Left = testRightLeft;
+        //    testBinaryTree.Root.Left.Left.Left = testLeftLeftLeft;
+        //    testBinaryTree.Root.Left.Left.Right = testLeftLeftRight;
+        //    testBinaryTree.Root.Left.Right.Left = testLeftRightLeft;
+        //    testBinaryTree.Root.Right.Left.Left = testRightLeftLeft;
+
+        //    List<int> expectedList = new List<int>();
+        //    expectedList.Add(0);
+        //    expectedList.Add(1);
+        //    expectedList.Add(2);
+        //    expectedList.Add(3);
+        //    expectedList.Add(4);
+        //    expectedList.Add(5);
+        //    expectedList.Add(6);
+        //    expectedList.Add(7);
+        //    expectedList.Add(8);
+        //    expectedList.Add(9);
+
+
+        //    List<int> results = testBinaryTree.GetValuesBreadthFirst();
+
+        //    Assert.Equal(expectedList, results);
+        //}
     }
 }
