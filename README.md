@@ -18,6 +18,7 @@
 - Class 08 - Linked List Merge
 - Class 10 - Stacks and Queues
 - Class 15 - Trees
+- Class 16 - Breadth-First Tree Traversal
 
 
 ## 401 Code Challenges - Found in challenges directory
