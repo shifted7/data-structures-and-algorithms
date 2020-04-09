@@ -18,7 +18,8 @@
 - Class 08 - Linked List Merge
 - Class 10 - Stacks and Queues
 - Class 15 - Trees
-- Class 16 - Breadth-First Tree Traversal
+- Class 17 - Breadth-First Tree Traversal
+- Class 18 - Find Binary Tree Max Value
 
 
 ## 401 Code Challenges - Found in challenges directory
@@ -254,3 +255,16 @@
 
 #### Solution
 ![Binary Tree Breadth First Traversal](Data-Structures/assets/breadth-first.jpg)
+
+### Code Challenge Class 18: Breadth-First Tree Traversal
+- Write an instance method called find-maximum-value. Without utilizing any of the built-in methods available to your language, return the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
+
+#### Approach and Efficiency
+- This code creates a Node class which has public properties of Value, Left, and Right. Left and Right are edges that connect to other Nodes one level down in the tree. The class requires a value in its constructor in order to be instantiated.
+  - Changing either property is just O(1) time and space
+
+- This code adds to the BinaryTree class with a method FindMaxValue, which returns the highest value in the tree after a depth-first traversal. 
+ - This method takes O(n) space and time.
+
+#### Solution
+![Find Max Value in Binary Tree](Data-Structures/assets/find-maximum-binary-tree.jpg)
