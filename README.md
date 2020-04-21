@@ -10,6 +10,7 @@
 - Class 12 - FIFO Animal Shelter
 - Class 13 - Multi-Bracket Validation
 - Class 16 - FizzBuzzTree
+- Class 26 - Insertion Sort
 
 ### Data Structures
 - Class 05 - Linked List
@@ -117,6 +118,17 @@
 
 #### Solution
 ![FizzBuzzTree Solution Whiteboard](challenges/MultiBracketValidation/assets/fizz-buzz-tree.png)
+
+### Code Challenge Class 26: Insertion Sort
+- Write a function called InsertionSort which follows the given psuedocode to sort the inputted array.
+
+#### Approach and Efficiency
+- This code travereses through the given array, starting at the second value (or exiting immediately if there are less than two values). It uses a temp variable to hold the value of the current element to analyze, and compares that element to the one before it. If the temp element is less than the one before it, it is moved. The function loops until the temp element is either no longer less than the element before it, or has reached the start of the array. In any case, the function then sets the temp value to the next value in the array. This process is done until the array is sorted.
+  
+    - The function operates with O(n^2) time because it potentially loops through each element of the array while within the main loop, and O(1) space, because it modifies the array in-place, without creating new values.
+
+#### Solution
+![Insertion Sort Tracing Whiteboard](challenges/InsertionSort/assets/insertion-sort.jpg)
 
 ## 401 Data Structures - Found in Data-Structures directory
 
