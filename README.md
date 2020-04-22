@@ -11,6 +11,7 @@
 - Class 13 - Multi-Bracket Validation
 - Class 16 - FizzBuzzTree
 - Class 26 - Insertion Sort
+- Class 27 - Merge Sort
 
 ### Data Structures
 - Class 05 - Linked List
@@ -129,6 +130,17 @@
 
 #### Solution
 ![Insertion Sort Tracing Whiteboard](challenges/InsertionSort/assets/insertion-sort.jpg)
+
+### Code Challenge Class 27: Merge Sort
+- Write a function called MergeSort which follows the given psuedocode to sort the inputted array.
+
+#### Approach and Efficiency
+- This code makes recursive calls to traverse through the array, repeatedly dividing it into halves until it gets down to single elements. In a separate function, it then compares those elements, and puts them together in a single array depending on their value. In this way, it achieves sorted sub-arrays. Those sub-arrays are then traversed through, and their values compared as they are added to the array one level up. Eventually, all the values have been returned to the original array, but in sorted position.
+  
+    - The function operates with O(nlog(n)) time because it first divides the elements, then operates on each one, and O(n) space, because it creates two new arrays to divide the elements.
+
+#### Solution
+![Merge Sort Tracing Whiteboard](challenges/MergeSort/assets/merge-sort.jpg)
 
 ## 401 Data Structures - Found in Data-Structures directory
 
