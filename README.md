@@ -12,6 +12,7 @@
 - Class 16 - FizzBuzzTree
 - Class 26 - Insertion Sort
 - Class 27 - Merge Sort
+- Class 28 - Quick Sort
 
 ### Data Structures
 - Class 05 - Linked List
@@ -140,7 +141,19 @@
     - The function operates with O(nlog(n)) time because it first divides the elements, then operates on each one, and O(n) space, because it creates two new arrays to divide the elements.
 
 #### Solution
+![Quick Sort Tracing Whiteboard](challenges/QuickSort/assets/quick-sort.jpg)
+
+### Code Challenge Class 27: Merge Sort
+- Write a function called QuickSort which follows the given psuedocode to sort the inputted array.
+
+#### Approach and Efficiency
+- This code first partitions the array by a pivot value, putting all the other values on one side of the array or the other depending on their value compared to the pivot value, with lesser values sent to the left and greater values sent to the right. It then makes recursive calls to perform this same partitioning on the two sides of the array, repeatedly dividing it into halves until it gets down to single elements. A swapping function is used to change the positions of elements within the array, including the pivot element at each iteration. Eventually, all the values have been still in the array, but in sorted positions.
+  
+    - The function operates with O(n^2) time because in the worst case (reverse sorted) it has to loop through all the other elements in the array for each element in the array. It operates in O(n) space, because it creates two new arrays to divide the elements.
+
+#### Solution
 ![Merge Sort Tracing Whiteboard](challenges/MergeSort/assets/merge-sort.jpg)
+
 
 ## 401 Data Structures - Found in Data-Structures directory
 
