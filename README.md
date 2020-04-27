@@ -23,6 +23,7 @@
 - Class 15 - Trees
 - Class 17 - Breadth-First Tree Traversal
 - Class 18 - Find Binary Tree Max Value
+- Class 30 - Hash Tables
 
 
 ## 401 Code Challenges - Found in challenges directory
@@ -305,3 +306,18 @@
 
 #### Solution
 ![Find Max Value in Binary Tree](Data-Structures/assets/find-maximum-binary-tree.jpg)
+
+### Code Challenge Class 30: Hash Table
+- Implement a Hashtable with the following methods:
+  - add: takes in both the key and value. This method should hash the key, and add the key and value pair to the table, handling collisions as needed.
+  - get: takes in the key and returns the value from the table.
+  - contains: takes in the key and returns a boolean, indicating if the key exists in the table already.
+  - hash: takes in an arbitrary key and returns an index in the collection.
+
+#### Approach and Efficiency
+- This code creates a HashTable class which has public properties of Size and Contents. Size is the length, defined at creation and modified during resizing.
+- This code creates a Bucket class 
+
+#### Solution
+![Hash Table Whiteboard 1](/Data-Structures/assets/hashtable1.jpg)
+![Hash Table Whiteboard 2](/Data-Structures/assets/hashtable2.jpg)
