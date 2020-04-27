@@ -315,8 +315,10 @@
   - hash: takes in an arbitrary key and returns an index in the collection.
 
 #### Approach and Efficiency
-- This code creates a HashTable class which has public properties of Size and Contents. Size is the length, defined at creation and modified during resizing.
-- This code creates a Bucket class 
+- This code creates a HashTable class which has public properties of Size and Contents. Size is the length, defined at creation and modified during resizing. Contents is an array of linked lists of buckets, and defines the contents of the hash table.
+- This code creates a Bucket class. 
+
+(Full explanation not yet ready. See Whiteboards for details of HashTable.Add)
 
 #### Solution
 ![Hash Table Whiteboard 1](/Data-Structures/assets/hashtable1.jpg)
