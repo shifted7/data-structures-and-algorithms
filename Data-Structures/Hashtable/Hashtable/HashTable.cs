@@ -18,5 +18,7 @@ namespace Hashtable
             }
             Size = Contents.Length;
         }
+
+        //TODO: add methods for add, get, contains, and hash
     }
 }
