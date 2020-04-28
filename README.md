@@ -13,6 +13,7 @@
 - Class 26 - Insertion Sort
 - Class 27 - Merge Sort
 - Class 28 - Quick Sort
+- Class 31 - Repeated Word
 
 ### Data Structures
 - Class 05 - Linked List
@@ -155,6 +156,17 @@
 #### Solution
 ![Quick Sort Tracing Whiteboard](challenges/QuickSort/assets/quick-sort.jpg)
 
+### Code Challenge Class 31: Repeated Word
+- Given a string, write a function called RepeatedWord which returns the first word to occur more than once in that provided string.
+
+#### Approach and Efficiency
+- This code loops over the string, utilizing a hash table to store the words it comes across. It determines whether it has found a word by adding alpha characters it finds to a word variable and submitting the total word when it reaches a non-alpha character. The words are hashed, and if a word is found again, the method will see there is a word already at that position in the table and see if they match, returning the word if they do.
+  
+    - The function operates with O(n) time and O(n) space.
+
+#### Solution
+![Repeating Word 1](challenges/RepeatedWord/assets/repeated-word1.jpg)
+![Repeating Word 2](challenges/RepeatedWord/assets/repeated-word2.jpg)
 
 ## 401 Data Structures - Found in Data-Structures directory
 
