@@ -321,6 +321,10 @@
 
 (Full explanation not yet ready. See Whiteboards for details of HashTable.Add)
 
+#### Solution
+![Hash Table Whiteboard 1](/Data-Structures/assets/hashtable1.jpg)
+![Hash Table Whiteboard 2](/Data-Structures/assets/hashtable2.jpg)
+
 ### Code Challenge Class 32: Tree Intersection
 #### Solution
 ![Tree Intersection Whiteboard 1](challenges/TreeIntersection/assets/tree-intersection1.jpg)
