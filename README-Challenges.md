@@ -323,4 +323,4 @@
 
 ### Code Challenge Class 32: Tree Intersection
 #### Solution
-![Tree Intersection Whiteboard 1]()
+![Tree Intersection Whiteboard 1](challenges/TreeIntersection/assets/tree-intersection1.jpg)
