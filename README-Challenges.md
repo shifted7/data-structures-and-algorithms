@@ -14,6 +14,7 @@
 - Class 27 - Merge Sort
 - Class 28 - Quick Sort
 - Class 31 - Repeated Word
+- Class 32 - Tree Intersection
 
 ## 401 Code Challenges - Found in challenges directory
 
@@ -320,6 +321,6 @@
 
 (Full explanation not yet ready. See Whiteboards for details of HashTable.Add)
 
+### Code Challenge Class 32: Tree Intersection
 #### Solution
-![Hash Table Whiteboard 1](/Data-Structures/assets/hashtable1.jpg)
-![Hash Table Whiteboard 2](/Data-Structures/assets/hashtable2.jpg)
+![Tree Intersection Whiteboard 1]()
