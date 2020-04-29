@@ -15,18 +15,6 @@
 - Class 28 - Quick Sort
 - Class 31 - Repeated Word
 
-### Data Structures
-- Class 05 - Linked List
-- Class 06 - Linked List Insertions
-- Class 07 - Linked List Kth From End
-- Class 08 - Linked List Merge
-- Class 10 - Stacks and Queues
-- Class 15 - Trees
-- Class 17 - Breadth-First Tree Traversal
-- Class 18 - Find Binary Tree Max Value
-- Class 30 - Hash Tables
-
-
 ## 401 Code Challenges - Found in challenges directory
 
 ### Code Challenge Class 01: Array Reverse
