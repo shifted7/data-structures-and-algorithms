@@ -20,7 +20,7 @@
 - Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
 - Within your LinkedList class, include a head property. Upon instantiation, an empty Linked List should be created.
 - Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
-- Define a method called includes which takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list.
+- Define a method called includes which takes any value as an argument and returns a boolean result depending on whether that value exists as a Nodeâ€™s value somewhere within the list.
 - Define a method called toString which takes in no arguments and returns a string representing all the values in the Linked List, formatted as:
 `"{ a } -> { b } -> { c } -> NULL"`
 - Any exceptions or errors that come from your code should be semantic, capturable errors. For example, rather than a default error thrown by your language, your code should raise/throw a custom, semantic error that describes what went wrong in calling the methods you wrote for this lab.
@@ -51,7 +51,7 @@
 ![challenge-6-resubmit](Data-Structures/assets/challenge-6-resubmit.jpg)
 
 ### Code Challenge Class 07: Linked List kth From End
-- Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list.
+- Write a method for the Linked List class which takes a number, k, as a parameter. Return the nodeâ€™s value that is k from the end of the linked list.
 #### Approach and Efficiency
 - This code adds a method getValueKthFromEnd to the LinkedList class. This method first finds the length of the linked list by traversing it and incrementing a counter on each change to the next node. Then, the method subtracts k from this value, to find the number of "nexts" required to get to the desired node. It then traverses the array, jumping the calculated number of times, and returns the value at the resulting node.
 - The efficiency of this code is O(n) time because we have to traverse the list both to find the length and to get to the correct node. It is O(1) space.
@@ -77,7 +77,7 @@
 - Create a Stack class that has a top property. It creates an empty Stack when instantiated.
   - This object should be aware of a default empty value assigned to top when the stack is created.
   - Define a method called push which takes any value as an argument and adds a new node with that value to the top of the stack with an O(1) Time performance.
-  - Define a method called pop that does not take any argument, removes the node from the top of the stack, and returns the node’s value.
+  - Define a method called pop that does not take any argument, removes the node from the top of the stack, and returns the nodeâ€™s value.
     - Should raise exception when called on empty stack
   - Define a method called peek that does not take an argument and returns the value of the node located on top of the stack, without removing it from the stack.
     - Should raise exception when called on empty stack
@@ -85,7 +85,7 @@
 - Create a Queue class that has a front property. It creates an empty Queue when instantiated.
   - This object should be aware of a default empty value assigned to front when the queue is created.
   - Define a method called enqueue which takes any value as an argument and adds a new node with that value to the back of the queue with an O(1) Time performance.
-  - Define a method called dequeue that does not take any argument, removes the node from the front of the queue, and returns the node’s value.
+  - Define a method called dequeue that does not take any argument, removes the node from the front of the queue, and returns the nodeâ€™s value.
     - Should raise exception when called on empty queue
   - Define a method called peek that does not take an argument and returns the value of the node located in the front of the queue, without removing it from the queue.
     - Should raise exception when called on empty queue
@@ -182,6 +182,4 @@
 ![Hash Table Whiteboard 1](/Data-Structures/assets/hashtable1.jpg)
 ![Hash Table Whiteboard 2](/Data-Structures/assets/hashtable2.jpg)
 
-### Code Challenge Class 32: Tree Intersection
-#### Solution
-!Tree Intersection Whiteboard 1]()
+
