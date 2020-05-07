@@ -12,7 +12,6 @@
 - Class 17 - Breadth-First Tree Traversal
 - Class 18 - Find Binary Tree Max Value
 - Class 30 - Hash Tables
-- Class 32 - Tree Intersection
 
 ## 401 Data Structures - Found in Data-Structures directory
 
