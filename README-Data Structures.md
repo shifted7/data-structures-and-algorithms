@@ -173,10 +173,15 @@
   - hash: takes in an arbitrary key and returns an index in the collection.
 
 #### Approach and Efficiency
-- This code creates a HashTable class which has public properties of Size and Contents. Size is the length, defined at creation and modified during resizing. Contents is an array of linked lists of buckets, and defines the contents of the hash table.
-- This code creates a Bucket class. 
+- This code creates a HashTable class which has public properties of Size and Contents. Size is the length, defined at creation and modified during resizing. Contents is an array of linked lists, and defines the contents of the hash table. Each linked list exists at an index of the hash table, and the nodes in the linked list are key-value pairs.
+- For the Hash method, the goal is to take a key and return an index in the hash table (in our case, in Contents) that corresponds to that key through some algorithm. The algorithm I've chosen takes the ascii values of each character in the key, multiplies it by a number corresponding to its position in the string, sums up all the values for each character, and multiplies by a prime number to introduce more variation in the final step, which is to take the modulo of the hash table's size. In this way, we get a value that is between 0 and the size of the hash table - 1. This will be the index to place the key.
+  - This efficiency of this method is O(n) time, because it has to loop through each character in the key, and O(1) space.
+- For the Add method, we want to add a key-value pair to the hash table. We first hash the key using Hash, and then put the key and value together in a KeyValuePair object. We then check the index corresponding to the hash: if it is null, we know its empty, and we create a new linked list and append the KeyValuePair to it as a new node. If the hash index is not null, we add the new key-value pair to the front of the linked list at that index.
+  - This efficiency of this method is O(1) time and space.
+- For the Get method, we want to get the value for the given key from the table, if it exists. To do so, we hash the key and check if the table at that hash value is empty. If it isn't, we check each node that is in the linked list there, to see if any of them contain a matching key. If any of them do, the value of that node is returned. In any other case, the method returns null.
+- For the Contains method, we use very similar logic to the Get method, but instead of returning the value when we find a matching key, we return true. Otherwise, we return false.
 
-(Full explanation not yet ready. See Whiteboards for details of HashTable.Add)
+- All of these methods have efficiency of O(1) space and time.
 
 #### Solution
 ![Hash Table Whiteboard 1](/Data-Structures/assets/hashtable1.jpg)

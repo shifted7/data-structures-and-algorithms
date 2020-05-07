@@ -14,7 +14,11 @@ namespace Hashtable
             Size = Contents.Length;
         }
 
-
+        /// <summary>
+        /// Creates a hash value for a given key by passing that key through an algorithm, which determines where the key is stored in the hash table.
+        /// </summary>
+        /// <param name="key">The key to match to a hash value.</param>
+        /// <returns>The hash value for the given key.</returns>
         public int Hash(string key)
         {
             int positionLoopCount = 8; // As part of the hash, multiply by a count that decreases from this number to 1, then loops. This prevents words with the same letters in different positions from having the same hash.
@@ -31,6 +35,12 @@ namespace Hashtable
             return sum * prime % Size;
         }
         
+        /// <summary>
+        /// Takes a key and a value, and stores them in the hash table.
+        /// </summary>
+        /// <param name="key">The key, or label/name to refer to the value</param>
+        /// <param name="value">The actual information that corresponds to the key</param>
+        /// <returns>The hash value index of the hash table where the key and value have been stored.</returns>
         public int Add(string key, string value)
         {
             int hash = Hash(key);
@@ -45,6 +55,11 @@ namespace Hashtable
             return hash;
         }
         
+        /// <summary>
+        /// Provides the value stored in the hash table for a given key.
+        /// </summary>
+        /// <param name="key">The key to search for in the hash table.</param>
+        /// <returns>The value that corresponds to the key.</returns>
         public string Get(string key)
         {
             int hash = Hash(key);
@@ -60,6 +75,27 @@ namespace Hashtable
                 }
             }
             return null;
+        }
+
+        /// <summary>
+        /// Checks whether the given key is in the hash table.
+        /// </summary>
+        /// <param name="key">The key to search for.</param>
+        /// <returns>True if the key is in the table, false otherwise.</returns>
+        public bool Contains(string key)
+        {
+            int hash = Hash(key);
+            if (Contents[hash] != null)
+            {
+                foreach(var kvPair in Contents[hash])
+                {
+                    if(kvPair.Key == key)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
     }
 }
