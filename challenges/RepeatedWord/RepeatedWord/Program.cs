@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace RepeatedWord
 {
@@ -11,17 +14,23 @@ namespace RepeatedWord
 
         public static string RepeatedWord(string text)
         {
-            //Read through text
-            string word = "";
-            for(int i = 0; i<text.Length, i++)
+            Regex wordsRx = new Regex(@"\b\w+");
+            var matches = wordsRx.Matches(text);
+            HashSet<string> textWords = new HashSet<string>();
+            string word;
+            foreach(var match in matches)
             {
-
+                word = match.ToString().ToLower();
+                if (textWords.Contains(word))
+                {
+                    return word;
+                }
+                else
+                {
+                    textWords.Add(word);
+                }
             }
-            //Read words
-                //Read alpha-numeric characters only
-                //End words at non-alphanumeric characters
-                //Word = alpha character until non-alpha character
-            //Put 
+            return null;
         }
     }
 }
