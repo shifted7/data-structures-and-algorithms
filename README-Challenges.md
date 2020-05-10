@@ -172,5 +172,17 @@
 ![Tree Intersection Whiteboard 1](challenges/TreeIntersection/assets/tree-intersection1.jpg)
 
 ### Code Challenge Class 33: Left Join
+- Write a function that LEFT JOINs two hashmaps into a single data structure.
+- The first parameter is a hashmap that has word strings as keys, and a synonym of the key as values.
+- The second parameter is a hashmap that has word strings as keys, and antonyms of the key as values.
+- Combine the key and corresponding values (if they exist) into a new data structure according to LEFT JOIN logic.
+- LEFT JOIN means all the values in the first hashmap are returned, and if values exist in the “right” hashmap, they are appended to the result row. If no values exist in the right hashmap, then some flavor of NULL should be appended to the result row.
+- The returned data structure that holds the results is up to you. It doesn’t need to exactly match the output below, so long as it achieves the LEFT JOIN logic.
+- Avoid utilizing any of the library methods available to your language.
+
+#### Approach and Efficiency
+- This code has a single function, LeftJoin, supported by a HashTable class. The HashTable class allows the adding, getting, and checking for contains of hash tables instantiated from it. The LeftJoin function uses these methods to first loop through hash table A, and for each key/value pair, add them to the final data structure (a list of arrays, each array representing an entry in the hash table). For each key/value pair, hash table B is also checked for the same key, and if it has it, the function adds the value of that key in hash table B to the same entry. The function does this for each entry in hash table A, then returns the final list.
+- This approach uses O(n) time and O(n) space.
+
 #### Solution
 ![Left Join Whiteboard 1](challenges/LeftJoin/assets/left-join.jpg)
