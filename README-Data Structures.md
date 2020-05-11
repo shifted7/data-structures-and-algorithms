@@ -12,6 +12,7 @@
 - Class 17 - Breadth-First Tree Traversal
 - Class 18 - Find Binary Tree Max Value
 - Class 30 - Hash Tables
+- Class 35 - Graphs
 
 ## 401 Data Structures - Found in Data-Structures directory
 
@@ -186,4 +187,11 @@
 ![Hash Table Whiteboard 1](/Data-Structures/assets/hashtable1.jpg)
 ![Hash Table Whiteboard 2](/Data-Structures/assets/hashtable2.jpg)
 
+### Code Challenge Class 35: Graphs
 
+
+#### Approach and Efficiency
+(Explanation not yet ready. See whiteboard for implementation.)
+
+#### Solution
+![Graph Whiteboard 1](/Data-Structures/assets/graph.jpg)
